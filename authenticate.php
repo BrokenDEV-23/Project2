@@ -15,7 +15,7 @@ $result = mysqli_query($conn, $sql);
 
 if($result AND mysqli_num_rows($result) > 0){
     $row = mysqli_fetch_assoc($result);
-    if($password == $row["password"]){
+    if(password_verify($password, $row['password'])){
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['role'] = $row['role'];
         switch ($role) {

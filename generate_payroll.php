@@ -74,7 +74,7 @@
         }
 
         // Fetch employees' payroll information from the database
-        $sql = "SELECT id, name, hourly_rate, total_hours_worked FROM employees";
+        $sql = "SELECT e_id, hourly_rate, total_hours_worked FROM payroll;";
         $result = mysqli_query($conn, $sql);
 
         // Check if there are any employees
@@ -82,14 +82,13 @@
             // Display payroll information
             echo "<h2>Payroll Information</h2>";
             echo "<table>";
-            echo "<tr><th>Employee ID</th><th>Name</th><th>Hourly Rate</th><th>Total Hours Worked</th><th>Total Pay</th></tr>";
+            echo "<tr><th>Employee ID</th><th>Hourly Rate</th><th>Total Hours Worked</th><th>Total Pay</th></tr>";
             while ($row = mysqli_fetch_assoc($result)) {
                 // Calculate total pay
                 $total_pay = $row['hourly_rate'] * $row['total_hours_worked'];
 
                 echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['name'] . "</td>";
+                echo "<td>" . $row['e_id'] . "</td>";
                 echo "<td>$" . $row['hourly_rate'] . "</td>";
                 echo "<td>" . $row['total_hours_worked'] . "</td>";
                 echo "<td>$" . $total_pay . "</td>";

@@ -10,6 +10,7 @@
         <!-- Add content specific to the manager dashboard -->
         <p>You have access to manager functionalities.</p>
         <ul>
+            <li><a href="view_profile.php">View Your Profile</a></li>
             <li><a href="view_employees.php">View Employees</a></li>
             <li><a href="generate_payroll.php">Generate Payroll</a></li>
             <!-- Add more links or features as needed -->

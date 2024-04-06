@@ -13,8 +13,8 @@
         
         <li><a href="view_profile.php">View Your Profile</a></li>
             <li><a href="view_employees.php">View Employees</a></li>
-            <li><a href="add_employee.php">Add Employee</a></li>
             <li><a href="generate_payroll.php">Generate Payroll</a></li>
+            <li><a href="pay.php">Manage Employees</a></li>
             <!-- Add more links or features as needed -->
         </ul>
     </div>

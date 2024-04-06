@@ -53,7 +53,7 @@ if (!$conn) {
 }
 
 // Fetch employees' information from the database
-$sql = "SELECT id, name, role FROM employees ORDER BY id ASC";
+$sql = "SELECT e_id, name, role FROM employees ORDER BY e_id ASC";
 $result = mysqli_query($conn, $sql);
 
 // Check if there are any employees
@@ -64,7 +64,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<tr><th>Employee ID</th><th>Name</th><th>Role</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['e_id'] . "</td>";
         echo "<td>" . $row['name'] . "</td>";
         echo "<td>" . $row['role'] . "</td>";
         echo "</tr>";

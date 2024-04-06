@@ -23,7 +23,7 @@ if (!$conn) {
 
 // Fetch user's profile information from the database
 $user_id = $_SESSION["user_id"];
-$sql = "SELECT * FROM employees WHERE id = '$user_id'";
+$sql = "SELECT * FROM employees WHERE e_id = '$user_id'";
 $result = mysqli_query($conn, $sql);
 
 // Check if user exists
@@ -62,7 +62,7 @@ if (mysqli_num_rows($result) == 1) {
     <body>
     <div class="container">
         <h2>Profile Information</h2>
-        <p><strong>Employee ID:</strong> <?php echo $row['id']; ?></p>
+        <p><strong>Employee ID:</strong> <?php echo $row['e_id']; ?></p>
         <p><strong>Name:</strong> <?php echo $row['name']; ?></p>
         <p><strong>Role:</strong> <?php echo $row['role']; ?></p>
         <!-- Add more fields as needed -->

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$name = $_POST["name"];
+$id = $_POST["id"];
 $password = $_POST["password"];
 $role = $_POST["role"];
 
@@ -10,13 +10,13 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT *FROM employee_login JOIN employees ON employee_login.employee_id = employees.id WHERE employees.name = '$name' AND employees.role = '$role'";
+$sql = "SELECT * FROM  employees WHERE employees.e_id = '$id' AND employees.role = '$role'";
 $result = mysqli_query($conn, $sql);
 
 if($result AND mysqli_num_rows($result) > 0){
     $row = mysqli_fetch_assoc($result);
     if(password_verify($password, $row['password'])){
-        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_id'] = $row['e_id'];
         $_SESSION['role'] = $row['role'];
         switch ($role) {
             case 'boss':
